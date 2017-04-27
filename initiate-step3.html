@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发起项目-step3</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/head.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/build.css">
+     <link rel="stylesheet" href="css/initiate-step.css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'>
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/bootstrapValidator.js"></script>
+    <script src="js/error.js"></script>
+    <script src="js/surplus.js"></script>
+<script>
+    $(function(){
+        $('#addBtn').click(function(){
+            $('#lee').before('<li class="addLi"><input class="text-center" id="input2" type="text" value="回报标题" disabled/> <span class="dele glyphicon glyphicon-remove"></span></li>');
+             $('#input1').val('回报标题')
+             $(".dele").on("click",function(){//通过 live()  
+             $(this).parent().remove();//移除当前点击元素的父元素  
+        });
+         });
+    });
+    function cop(){
+        var str=document.getElementById("input1").value;
+        document.getElementById("input2").value = str;
+       }
+</script>   
+</head>
+<body>
+<!-- container-header-->
+    <div class="container container-header">
+        <div class="row clearfix container-header-center">
+            <div class="headerLeft pull-left">
+                <div class="headerLeft-logo">
+                    <a href="index.html" class="pull-left"><img src="images/zdtlogo1.jpg" alt="" class="img-responsive"></a>
+                </div>
+            </div>
+            <div class="headerRight pull-right">
+                <div class="headerRight-user">
+                    <div class="headerRight-launch pull-left">
+                        <a href="initiate.html">发起项目</a>
+                    </div>
+                    <div class="headerRight-user dropdown pull-left">
+                        <a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="images/0.jpg" alt="" class="img-circle">
+                            <span>Dropdown trigger</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu headerRight-user-dropdown" aria-labelledby="dLabel">
+                            <li><a href="#"><i class="glyphicon glyphicon-list" aria-hidden="true"></i>我的订单</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-tasks"></i>我的项目</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-info-sign"></i>帮助中心</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-cog"></i>个人设置</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-off"></i>退出</a></li>
+                        </ul>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="processor row" >
+            <i class="fa fa-check-circle i1" style="color: #5cb975"></i>
+            <i class="fa fa-check-circle i2" style="color: #5cb975"></i>
+            <i class="fa fa-circle"></i><br/>
+            <span style="color: #5cb975">项目设置</span><span class="span2" style="color: #5cb975">内容编辑</span><span>回报设置</span>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-2 rowLeft">
+                <ul>
+                    <li id="lee"></li>
+                </ul>
+                <div class="add"><p></p></div>  
+                <button id="addBtn" class="btn btn-success">添加回报</button>
+            </div>
+            <div class="col-md-7">
+                <form method="post" id="defaultForm" class="form-horizontal">
+
+                    <div class="form-group rowMid-set">
+                        <label for="" class="col-md-2 text-center col-xs-2"><i>*</i>回报金额<br/>（元）</label>
+                        <input type="text" class="col-md-10 col-xs-10" name="returnAmount" placeholder="请输入回报金额"/>
+                    </div>
+                    <div class="form-group rowMid-set">
+                        <label for="" class="col-md-2 text-center col-xs-2"><i>*</i>回报标题</label>
+                        <input id="input1" class="col-md-10 col-xs-10" name="returnTitle" type="text" onpropertychange="cop()" oninput="cop()" placeholder="请输入回报标题" />
+                        <span class="spanNum5"><span id="textCount5">10</span><span>/10</span></span>
+                    </div>
+                    <div class="form-group rowMid-set describe">
+                        <label for="" class="col-md-2 text-center col-xs-2"><i>*</i>回报描述</label>
+                        <textarea class="col-md-10 col-xs-10" name="returnDescribe" id="formCon6"></textarea>
+                        <span class="spanNum6"><span id="textCount6">100</span><span>/100</span></span>
+                    </div>
+                    <div class="form-group choice">
+                        <label for="" class="col-md-2 text-center col-xs-2"><i>*</i>人数限制</label>
+                        <div class="input-group col-md-5 pull-left col-xs-5">
+                            <span class="input-group-addon">
+                               <input type="radio" name="peoples"/>
+                            </span>
+                            <input type="text" class="form-control text-center" placeholder="无人数限制" disabled />
+                        </div>
+                        <div class="input-group col-md-5 pull-left col-xs-5">
+                            <span class="input-group-addon">
+                               <input type="radio" name="peoples"/>
+                               <span>限制人数(人)</span>
+                            </span>
+                            <input type="number" class="form-control" placeholder="人数" />
+                        </div>
+                    </div>
+                    <div class="form-group send-time">
+                        <label for="" class="col-md-2 text-center col-xs-2"><i>*</i>发送回报时间</label>
+                        <input type="text" class="col-md-10 col-xs-10" placeholder="单位：天">
+                        <span>天</span>
+                    </div>
+                    <div class="form-group address-set">
+                        <label for="" class="col-md-2 text-center col-xs-2"><i>*</i>收货地址</label>
+                        <div class="input-group col-md-5 pull-left col-xs-5">
+                            <span class="input-group-addon">
+                               <input type="radio" name="home"/>
+                            </span>
+                            <input type="text" class="form-control text-center" placeholder="需要填写" disabled />
+                        </div>
+                        <div class="input-group col-md-5 pull-left col-xs-5">
+                            <span class="input-group-addon">
+                               <input type="radio" name="home"/>
+                            </span>
+                            <input type="text" class="form-control text-center" placeholder="不需要填写" disabled />
+                        </div>
+                    </div>
+                    <div class="form-group need clearfix">
+                        <div class="checkbox checkbox-info checkbox-circle pull-left">
+                            <input id="checkbox8" class="styled" type="checkbox" checked>
+                            <label for="checkbox8">
+                            </label>
+                        </div>
+                        <div class="pull-left">
+                            <h4>需要收集认筹者的微信号信息</h4>
+                            <p>如需通过微信和认筹者联系，可勾选此项要求用户在支付订单时填写微信号(必填)</p>
+                            <p>已勾选此项，请勿重复添加收集微信号的自定义备注。</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group remarks">
+                        <label for="" class="col-md-2 col-xs-2">默认备注</label>
+                        <div class="col-md-10 col-xs-10">
+                            <input type="text" placeholder="请输入备注名称, 敲击回车键确认添加。最多添加3个自定义备注" class="col-md-8 col-xs-8 pull-left"/>
+                            <div class="col-md-2 pull-left col-xs-2">
+                                <span class="input-group-addon">
+                                    <input type="radio" name="remarks"/>
+                                    <span>选填</span>
+                                </span>
+                            </div>
+                            <div class="col-md-2 pull-left col-xs-2">
+                                <span class="input-group-addon">
+                                    <input type="radio" name="remarks"/>
+                                    <span>必填</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="footer col-md-offset-8">
+                    <a href="#" type="button" class="btn btn-default">上一步</a>
+                    <a href="#" type="button" class="btn btn-default">保存</a>
+                    <a href="#" type="button" class="btn btn-success">预览</a>
+                </div>
+            </div>
+            <div class="col-md-1 col-md-offset-1 rowRight"></div>
+        </div>
+    </div>
+
+</body>
+</html>

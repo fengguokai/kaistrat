@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>项目详情页</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/head.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" />
+    <link rel="stylesheet" href="assets/countdown/jquery.countdown.css" />
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'>
+    <style>
+        .details-main{background: url(images/o_1ba7gma607eqih61alo4u5k1u19.jpg) no-repeat center; 
+          background-size:98% 700px; height: 700px; margin-top: 10px; position: relative;}
+        .photoTxt{padding: 20% 0 0 10%;}
+        .photoTxt .leftImg{float: left; padding-right: 20px;} 
+        .photoTxt .rightTxt>h3{line-height: 40px;}
+        .photoTxt .rightTxt{float: left; color: #fff; width: 628px;} 
+        .photoTxt .rightTxt>div>a{color: #fff; padding-right: 10px;}
+        .photoTxt .rightTxt>div>span{ color: #999; font-size: 12px; }
+        .photoTxt .rightTxt>div a:first-child img{display: inline-block;width: 45px; height: 45px; border-radius: 50%;}
+        #countdown{position: absolute;top: 96%; left: 8%;}
+        .detailsMsg{position: absolute;top: 97%; left: 80%;}
+        .detailsMsg a{display: inline-block;padding: 10px 14px; background:#000; opacity: .6; margin-left: 20px; color: #fff;letter-spacing:4px;}
+        .detailsMsg a i{font-size: 20px;}
+        .left-icon{position:absolute;left: -50px;top: 0; }
+        .left-icon li{border: 1px solid #666; border-bottom: none; width: 45px;height: 45px;}
+        .left-icon li:last-child{border-bottom:1px solid #666; }
+        .left-icon li:hover{background:#666;}
+        .left-icon li:hover a{ color: #fff; }
+        .left-icon li a{display: inline-block;width: 40px; height: 40px; text-align: center; font-weight: bold;}
+        .detailsContent{margin-top: 120px; position: relative;} 
+        .containerRight{position: relative;}
+        .containerRight1{background: #679df6;width: 300px; height: 300px; color: #fff;}
+        .containerRight1>div{padding: 10px 0 0 43px;}
+        .containerRight1>div>h2 span{font-size: 16px;}
+        .containerRight1>ul li{float: left; padding-right: 18px;} 
+        .containerRight1>div>div{padding:30px 0;}
+        .prompt {position: absolute; top: 250px; left: 240px; display: inline-block;background-color: #fbc937; color: #fff; width: 90px; height: 34px; text-align: center; line-height: 34px; z-index: 666;}
+        .promptMsg{ position: absolute;left: 160px; background-color: #fff; border: 1px solid #ccc; padding: 20px; color: #666; font-size: 12px; line-height: 18px; z-index: 555;display: none;}
+        .promptMsg>div{width: 980px; height: 240px;}
+        .promptMsg #xxx{font-size: 20px; position:absolute;top:0; left: 98%; color: #ccc;}
+        .containerRight2{width: 300px;  border: 1px solid #ccc; color: #999; margin-top: 80px; padding-bottom: 14px;}
+        .containerRight2>div{width: 240px; margin: 0 auto;} 
+        .containerRight2>div h3:first-child{border-bottom: 1px solid #ccc;}
+        .containerRight2>div h3{line-height: 40px; height: 40px;}
+        .containerRight2>div>div>span{font-size: 12px; color: #999;}
+        .containerRight2>div .div3{border-top: 1px solid #ccc; padding-top: 16px;}
+        .containerRight2>div .div3 a{display: inline-block; padding: 8px 24px; background-color: #5cb975; color: #fff;}
+
+    </style>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="assets/countdown/jquery.countdown.js"></script>
+    <script src="assets/js/script.js"></script>
+</head>
+<body>
+    <!-- container-header-->
+  <div class="container container-header">
+    <div class="row clearfix container-header-center">
+        <div class="headerLeft pull-left">
+          <div class="headerLeft-logo">
+            <a href="index.html" class="pull-left"><img src="images/zdtlogo1.jpg" alt="" class="img-responsive"></a>
+            <div class="headerLeft-logo-nav pull-left">
+              <a href="menu-initiator.html" id="aaa">发起人手册</a>
+                <a href="search.html">更多故事</a>
+                <a href="QR-code.html">APP下载</a>
+                <a href="search.html"><i class="glyphicon glyphicon-search" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="headerRight pull-right">
+        <div class="headerRight-user">
+          <div class="headerRight-launch pull-left">
+            <a href="initiate.html">发起项目</a>
+          </div>
+          <div class="headerRight-user dropdown pull-left">
+             <a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="images/0.jpg" alt="" class="img-circle">
+                <span>Dropdown trigger</span>
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu headerRight-user-dropdown" aria-labelledby="dLabel">
+                <li><a href="#"><i class="glyphicon glyphicon-list" aria-hidden="true"></i>我的订单</a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-tasks"></i>我的项目</a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-info-sign"></i>帮助中心</a></li>
+                <li><a href="page/index-set.html"><i class="glyphicon glyphicon-cog"></i>个人设置</a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-off"></i>退出</a></li>
+            </ul>
+          </div>
+        </div>    
+      </div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="details-main">
+      <div class="photoTxt">
+        <div class="leftImg">
+          <img src="http://images.kaistart.com/default-video-poster.png?imageView2/2/w/320">
+        </div>
+        <div class="rightTxt">
+          <h3>爵士下一站，广州</h3>
+          <p>这次，我们爆改了珠江啤酒在琶醍的大啤酒桶建筑，要把它打造成JZ Club在广州的新据点。来！一起煲一锅广州的JAZZ粥！</p>
+          <div><a href="personal-homepage.html"><img src="images/0.jpg"></a><a href="#">涵涵涵</a><span>2017年03月20日 广州</span></div>
+        </div>
+      </div>
+      <div id="countdown"></div>
+      <div class="detailsMsg">
+        <a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i>53</a><a href="#">查看支持</a>
+      </div>
+    </div>
+  </div>
+  <div class="detailsContent container">
+    <div class="row">
+      <div class="containerLeft pull-left"></div>
+      <div class="containerRight pull-right">
+        <div class="containerRight1">
+          <div>
+            <h2>575018<span>元</span></h2>
+            <p>认筹总金额</p> 
+            <div><img src="http://images.kaistart.com/xinbanline.png"></div>
+          </div>
+          <ul class="clearfix">
+            <li><span>33</span><span>人</span><p>认筹人数</p></li>
+            <li><span>575.02</span><span>%</span><p>认筹进度</p></li>
+          </ul>
+          <div>目标金额：100000 元</div>       
+        </div>
+        <span class="prompt" id="prompt" style="cursor:hand">风险提示</span> 
+
+        <div class="containerRight2">
+          <div>
+            <h3>2 <span>元</span></h3>
+            <h3>来，一起JAZZ！</h3>
+            <p>感谢您的支持！我们将在此档的支持者中抽取幸运儿，获得JZ Club价值80元的消费券。</p>
+            <p>抽奖规则：40人及以内抽取1人，80人及以内抽取2人，以此列推</p>
+            <div class="clearfix">
+              <span class="pull-left">剩余名额</span>
+              <span class="pull-right">无限制</span>
+            </div>
+            <div class="clearfix">
+              <span class="pull-left">发送回报时间</span>
+              <span class="pull-right">项目结束 10 天后发送</span>
+            </div>
+            <div class="clearfix div3">
+              <p class="pull-left">已有 8 人认筹</p>
+              <a href="#" class="pull-right">我要认筹</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="containerRight2">
+          <div>
+            <h3>10000<span>元 预约金</span></h3>
+            <h3>来，一起JAZZ！</h3>
+            <p>感谢您的支持！我们将在此档的支持者中抽取幸运儿，获得JZ Club价值80元的消费券。</p>
+            <p>抽奖规则：40人及以内抽取1人，80人及以内抽取2人，以此列推</p>
+            <div class="clearfix">
+              <span class="pull-left">剩余名额</span>
+              <span class="pull-right">无限制</span>
+            </div>
+            <div class="clearfix">
+              <span class="pull-left">发送回报时间</span>
+              <span class="pull-right">项目结束 10 天后发送</span>
+            </div>
+            <div class="clearfix div3">
+              <p class="pull-left">已有 8 人认筹</p>
+              <a href="#" class="pull-right">我要认筹</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="promptMsg" id="promptMsg">
+          
+          <div><p>
+          该项目须在 2017-04-19 23:59:59前达到 100000元目标金额才算成功，否则已支持订单将取消；订单取消时已支持金额将自动退还到您的个人账户。
+          <br/>
+          所有人都该知道开始众筹并不是电商。人们不是在这里购买已经存在的商品——我们是在参与创意。创意成真并不总是那么容易，一些项目会完成得很精彩，还有一些会遇到想不到的问题——请对它们保持耐心。 发起者对他们的项目负责。一旦你支持一个项目，你需要相信发起者可以很好的完成他的工作。你可以对发起者做一点研究，了解他们的经验、名声。支持者也要判断什么是值得支持的。 一些项目并不会按照计划进行。开始众筹的项目发起者会在这里详细记录他的计划进展，但是没有事情可以保证。当你支持一个项目，你需要记住这点。
+          <br/>
+          您可以在网站留言找到我（发起人），也可以下载“开始吧”APP，进入项目相关群组直接和我对话。 请认准开始众筹官方网址：www.kaistart.com ; 开始众筹官方app：开始吧。所有通过开始众筹平台认证的众筹项目只能在这两个官方平台进行支持。同时我们注意到很多用户会在项目评论或者聊天群中留下自己的个人信息。为了你的信息安全，请不要在项目评论或者聊天群中留下自己的个人信息。
+          </p>
+          <p>官方客服微信号：kaistart </p>
+          <p>客服热线：<span style="color: red">400-015-7151</span> </p>
+          <p>客服邮箱：service@kaistart.com （每日：10：00-22：00）</p>
+          <p>在支持任何一个项目前，请务必仔细阅读我们的<span style="color: #34a853">《用户协议》<span></p>
+          </div>
+          <i class="fa fa-times-circle" id="xxx" style="cursor:hand"></i>
+      </div>  
+    </div>
+
+    <!-- 左侧组件 -->
+    <ul class="left-icon">
+      <li><a href="#">我的自述</a></li>
+      <li><a href="#">我的项目</a></li>
+      <li><a href="#">为何众筹</a></li>
+      <li><a href="#">空间信息</a></li>
+      <li><a href="#">区位图</a></li>
+      <li><a href="#">我的回报</a></li>
+      <li><a href="#">我的团队</a></li>
+      <li><a href="#">时间轴</a></li>
+    </ul>
+  </div>
+
+  
+<!-- 右侧组件 -->
+  <ul class="right-icon">
+    <li class="phone">
+      <i class="fa fa-phone" aria-hidden="true"></i>
+      <div class="phone-hover">
+        <p>官方客服热线
+        <span>075555555555</span>
+        </p>
+      </div>
+    </li>
+    <li class="weixin">
+      <i class="fa fa-weixin" aria-hidden="true"></i>
+      <div class="weixin-hover">
+        <img src="images/QR.png" height="80px" width="80px">
+      </div>
+     </li>
+    <li class="weibo">
+       <i class="fa fa-weibo" aria-hidden="true"></i>
+    </li>
+    <li class="rocket" id="gotop">
+       <i class="fa fa-rocket" aria-hidden="true"></i>
+    </li>
+  </ul> 
+</body>
+</html>

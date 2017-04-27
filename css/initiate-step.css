@@ -1,0 +1,38 @@
+/*initiate-step1*/
+
+
+/*initiate-step2*/
+ .rowLeft li a{display: block;border:1px solid #eee; text-align: center;padding: 12px 0;}    
+ .rowLeft li .del{cursor:pointer; position: absolute;left: 85%;top: 15px;}
+ .rowLeft .addLi{position: relative;}
+ #addBtn{margin:30px 0 0 68px;}
+ .rowMid>div{height: 45px; line-height: 45px; padding-bottom: 64px; position: relative;}
+ .rowMid label{color: #666; border: 1px solid #ccc; height: 51px;border-right: none;}
+ .rowRight .iconDiv span{font-size: 120px; color: #eee;}
+ .footer{padding-bottom: 50px;}
+ #preview{position: relative; overflow: hidden; height: 400px;}
+ #preview img{margin-top: none; z-index: 0.2; position: absolute;top: -142px;width: 100%; height: 100%}
+ .contentText{z-index: 1; width: 100%; max-width: 100%; min-height: 150px;}
+ .spanNum4{position: absolute;left: 93%; color: #666;}
+
+/*initiate-step3*/
+#input2{background: #fff; height: 40px; border: 1px solid #eee;}
+.rowMid-set{height: 45px;padding-bottom: 56px;}
+.rowMid-set input,.send-time input{height: 45px;}
+.rowMid-set textarea{height: 150px;max-width: 100%; max-height: 150px; margin-bottom: 35px;} 
+.form-group label{font-size: 13px; color: #666;}
+.addLi{position: relative;}
+.dele {position: absolute;left: 90%; top: 14px;}
+.send-time{position: relative;}
+.send-time span{position: absolute;left: 85%; top: 13px;}
+.need p{font-size: 12px;}
+.remarks>div>input{height: 45px; font-size: 12px;}
+#addBtn{margin-left: 83px;}
+.footer{padding: 80px 0; }
+.input-group-addon:last-child {height: 45px;background: #fff;border: none;}
+.rowMid-set{position: relative;}
+.rowMid-set .help-block{position: absolute;left: 122px; top: 41px;}
+.describe .help-block{position: absolute;top: 148px;}
+.spanNum5{position: absolute;left: 90%; top: 14px;}
+.spanNum6{position: absolute;left: 90%; top: 119px;}
+form:nth-child(3) .help-block{position: absolute;top: 80px;}

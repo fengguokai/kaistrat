@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>支付购买页</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/head.css">
+    <style>
+        .address{width: 300px; height: 150px; border:4px solid #5cb975; margin: 60px 0; margin-right: 16px;}
+        .address>div{width: 260px;padding-left: 20px; padding-top: 20px;}
+        .address>div>span{margin-right: 16px;}
+        .address>div>a{display: inline-block; padding: 2px 6px; border:1px solid #666; margin-left: 10px;}
+        .address>div a:nth-child(4){background: #679df6; color: #fff;}
+        .newAddress{width: 300px; height: 150px; border:4px solid #999; margin: 60px 0;}
+        .newAddress:hover{background: #eee}
+        .newAddress>a{display: block;padding: 21% 0 0 34%;}
+        .modalAddress>div{width: 700px;}
+        .modalAddress>div>div>form{width: 500px; margin: 0 auto; padding: 60px 0;}
+        .modalAddress>div>div>form label{float: left; height: 45px; line-height: 45px; border:1px solid #999; border-right: none; width: 68px; text-align: center;}
+        .modalAddress>div>div>form label i{color: red;} 
+        .modalAddress>div>div>form input{height: 45px; width: 416px;}
+        .modalAddress>div>div>form span{position: absolute;left: 96%; top: 20px; font-size: 20px; cursor: pointer;}
+
+
+        .alipayMsg table tr:nth-child(1),.alipayMsg table tr:nth-child(2){
+            height: 45px;
+        }
+        .alipayMsg form{padding-left: 15px;}
+        .alipayMsg form .row{padding-top: 12px;}
+        .alipayMsg form .row label{border: 1px solid #999; height: 45px; line-height: 45px;border-right: none; width: 177px; text-align: center;}
+        .alipayMsg form .row input{height: 45px; padding-right: 20px;}
+        .alipayMsg form .alipayWay{padding-top: 40px;}
+        .alipayMsg form .alipayWay>div{padding-bottom: 20px;}
+        .alipayMsg form .alipayWay>div>input{height: 62px;}
+        .alipayMsg form .alipayWay>div .sl{height: 62px;width: 36px;}
+        .alipayMsg form .alipayWay>div .bankCard{display: inline-block; height: 62px; width: 100px;border: 1px solid #999;}
+        .alipayMsg .placeOrder{border:1px solid #34a853; width: 550px; padding: 40px 20px;}
+        .alipayMsg .placeBtn{display: inline-block;background:#34a853; padding: 10px 18px; color: #fff;}
+        .modalForm>div{width: 700px;}
+        .modalForm>div>div label{width: 80px; display: block;}
+        .modalForm>div>div input{border:0; outline:0;}
+        .modalForm>div>div>div{border-bottom: 1px solid #999; width: 500px; margin: 0 auto; padding: 20px 0;}
+        .modalForm>div>div>button{width: 500px; margin: 30px auto; display: block;}
+        .modalForm>div>div>span{position: absolute;left: 96%; top: 20px; font-size: 20px; cursor: pointer;}
+        .input-group-addon input[type=checkbox], .input-group-addon input[type=radio] {margin-top: 16px;}
+    
+    </style>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/error.js"></script>
+</head>
+<body>
+    <!-- container-header-->
+    <div class="container container-header">
+        <div class="row clearfix container-header-center">
+            <div class="headerLeft pull-left col-sm-8">
+                <div class="headerLeft-logo">
+                    <a href="index.html" class="pull-left"><img src="images/zdtlogo1.jpg" alt="" class="img-responsive"></a>
+                    <div class="headerLeft-logo-nav pull-left">
+                          <a href="menu-initiator.html" id="aaa">发起人手册</a>
+                        <a href="search.html">更多故事</a>
+                        <a href="QR-code.html" target="_bank">APP下载</a>
+                        <a href="search.html"><i class="glyphicon glyphicon-search" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="headerRight pull-right col-sm-4">
+                <div class="headerRight-usergroup">
+                    <div class="headerRight-launch pull-left">
+                        <a href="initiate-step1.html">发起项目</a>
+                    </div>
+                    <div class="headerRight-user dropdown pull-left">
+            <a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="images/0.jpg" alt="" class="img-circle">
+                <span>Dropdown trigger</span>
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu headerRight-user-dropdown" aria-labelledby="dLabel">
+                <li><a href="#"><i class="glyphicon glyphicon-list" aria-hidden="true"></i>我的订单</a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-tasks"></i>我的项目</a></li>
+                <li><a href="help-Center/page/index.html" target="_blank"><i class="glyphicon glyphicon-info-sign"></i>帮助中心</a></li>
+                <li><a href="page/index-set.html"><i class="glyphicon glyphicon-cog"></i>个人设置</a></li>
+                <li id="indexQuit"><a href="#"><i class="glyphicon glyphicon-off"></i>退出</a></li>
+            </ul>
+          </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    <div class="alipay">
+        <div class="container">
+            <div class="address pull-left">
+                <div>
+                    <span>xxx</span><a href="#" data-toggle="modal" data-target=".bs-example-modal-sm">修改</a><a href="#" class="delete">删除</a><a href="#">默认地址</a>
+                    <p>15555555555</p>
+                    <p>地址：xxxxxxxxxxxxxxxx</p>
+                </div>
+            </div>
+            <div class="newAddress pull-left">
+                <a href="#" data-toggle="modal" data-target=".bs-example-modal-sm">
+                    <span class="glyphicon glyphicon-user"></span>
+                    <span>使用新地址</span>
+                </a>
+            </div>
+           <!-- 地址摸态框 -->
+            <div class="modal fade bs-example-modal-sm modalAddress" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                <div class="modal-dialog modal-sm" role="document">
+                  <div class="modal-content">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="" class="pull-left"><i>*</i>姓名</label>
+                            <input type="text" placeholder="请输入姓名" name="modelname">
+                            <span></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="pull-left"><i>*</i>手机</label>
+                            <input type="text" placeholder="请输入本人或者本项目其他成员手机号码">
+                            <p style="color: #5fb675"><i class="glyphicon glyphicon-info-sign" style="color: #5fb675"></i>温馨提示：平台将会推送手机号码给您的每一位支持者
+*</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="pull-left"><i>*</i>地址</label>
+                            <input type="text" placeholder="请输入地址" name="modeladdress">
+                        </div>
+                        <button type="button" class="btn btn-success pull-right" id="addressBtn">提交</button>
+                        <span id="close" aria-hidden="true" data-dismiss="modal">x</span>
+                    </form>
+                  </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="alipayMsg">
+                <div class="clearfix">
+                    <h4 class="pull-left">确认订单信息</h4>
+                    <a href="#" class="pull-right">抽奖细则</a>
+                </div>
+                <table border="1px" class="tabel" width="100%" style="border:#999">
+                    <tr style="background: #e1e1e1;">
+                         <th style="width: 55%" class="text-center">回报</th>
+                        <th style="width: 15%" class="text-center">数量</th>
+                        <th style="width: 15%" class="text-center">单价（元）</th>
+                        <th style="width: 15%" class="text-center">小计（元）</th>
+                    </tr>
+                    <tr style="border-right: none;">
+                         <td>
+                             <span>&nbsp &nbsp项目：<b>《爵士下一站，广州》</b></span>
+                            &nbsp &nbsp &nbsp &nbsp &nbsp
+                            <span>发起人：<b>任宇清</b></span>
+                        </td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>&nbsp &nbsp1元试睡</p>
+                            <span>&nbsp &nbsp剩余名额： 无限制</span><br/>
+                            <span>&nbsp &nbsp发送回报时间：项目结束 1 天后发送</span>
+                        </td>
+                        <td class="text-center">1</td>
+                        <td class="text-center">1</td>
+                        <td class="text-center">1</td>
+                    </tr>
+                </table>
+                <form>
+                    <div class="row">
+                        <label for="" class="col-md-1"><i>*</i>微信号</label>
+                        <input class="col-md-10" type="text" placeholder="请输入微信号"/>
+                    </div>
+                    <div class="row">
+                        <label for="" class="col-md-1">备注</label>
+                        <input type="text" placeholder="请输入内容" class="col-md-10"/>
+                    </div>
+                    <div class="alipayWay">
+                        <h4>选择支付方式</h4>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                               <input type="radio" name="peoples"/>
+                            </span>
+                            <input type="text" class="text-center" placeholder="支付宝  扫码支付" disabled />
+                        </div>
+             
+                        <div class="input-group">
+                            <span class="input-group-addon pull-left sl">
+                                <input type="radio" name="peoples" data-toggle="modal" data-target=".bs-example-modal-lg"/>
+                            </span>
+                            <input type="" class="text-center pull-left" placeholder="银行卡支付" data-toggle="modal" data-target=".bs-example-modal-lg"/>
+                        </div>
+                    </div>
+                    <!-- 银行信息摸态框 -->
+                    <div class="modal fade bs-example-modal-lg modalForm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <h3 class="text-center">添加银行卡</h3>
+                                <div class="form-group">
+                                    <label for="" class="text-center pull-left">卡号</label>
+                                    <input type="text" placeholder="请输入银行卡号" spellcheck="false">
+                                </div>
+                                <div class="form-group clearfix">
+                                    <h5>&nbsp&nbsp&nbsp 持卡人信息</h5>
+                                    <label for="" class="text-center pull-left">姓名</label>
+                                    <input type="text" placeholder="请输入持卡人姓名" spellcheck="false">
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="text-center pull-left">身份证</label>
+                                    <input type="text" placeholder="请输入持卡人身份证" spellcheck="false">
+                                </div>
+                                <button type="button" class="btn btn-success" id="addBtn">确定</button>
+
+                                <span id="close" aria-hidden="true" data-dismiss="modal">x</span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="placeOrder pull-right">
+                    <div>
+                        <p class="text-right">实付金额 (元)：<span></span></p>
+                        <p class="text-right">送至：<span></span></p>
+                        <p class="text-right">收货人：<span></span></p>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <a href="#" class="placeBtn pull-right">提交订单</a>
+                <div class="clearfix"></div>
+                <p class="pull-right">请在下单后 <span style="color: red">15</span> 分钟内完成支付，超出时间系统将释放锁定的名额</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(function(){
+
+            var address='<div class="address pull-left"><div><span></span><a href="#" data-toggle="modal" data-target=".bs-example-modal-sm">修改</a><a href="#" class="delete" onclick="deltr(this)">删除</a><a href="#">默认地址</a><p></p><p></p></div></div>'
+            $('#addressBtn').click(function(){
+               $('.newAddress').before(address);
+               return false;
+            });
+
+            $('.delete').click(function(){
+                $('.delete').parent().parent().remove();
+            });
+            return false;
+        })
+         function deltr(delbtn){
+              $(delbtn).parents(".address").remove();
+              return false;
+               };  
+
+         $(function(){
+            var newBank='<span class="bankCard pull-left"></span>'
+            $('#addBtn').click(function(){
+                $('.sl').after(newBank)
+            })
+         })
+    </script>
+
+</body>
+</html>

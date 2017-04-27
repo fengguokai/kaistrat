@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>发起项目-step1</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrapValidator.css">
+  <link rel="stylesheet" href="css/head.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'>
+<style>
+.container-initiate .form-group{padding-bottom: 30px; position: relative;}
+.container-initiate label{color: #666;}
+.container-initiate .rowForm1{padding-bottom: 30px;}
+.container-initiate .form-group input{height: 45px;}
+.container-initiate .form-group p{background: #eee;border:1px solid #666;}
+.container-initiate .form-group .prompt{color: #5fb675;font-size: 12px;}
+.container-initiate .form-group .spanNum2{position: absolute;left: 77%;top: 14px;}
+.container-initiate .form-group .spanNum3{position: absolute;left: 77%;top: 136px;}
+.container-initiate i{color: red;}
+.container-initiate .rowForm select{height: 45px;}
+.container-initiate .rowForm .inputP{height: 90px;}
+#addCommodityIndex{padding: 0 0 20px 48px;}
+#addCommodityIndex img{width: 1000px;height: 600px;}
+#addCommodityIndex .btn{position: absolute;left: 43%;top: 490px; z-index: 998;}
+#addCommodityIndex .btn p{border:1px solid #666; color: #666;}
+#addCommodityIndex .btn span{font-size: 12px; color: #666;}
+.rowForm2 input{height:45px;}
+.rowForm .help-block{position: absolute;left: 195px;top: 45px;}
+.rowForm1 .help-block{position: absolute;left: 293px;top: 163px;}
+.rowForm2 .help-block{position: absolute;left: 293px; top: 42px; z-index: 10000}
+
+    </style>
+
+<!--  <script src="js/bootstrapValidator.js"></script> -->
+<script src="js/jquery-3.1.1.js"></script>
+<!-- <script src="js/jquery-1.10.2.min.js"></script> -->
+<!-- <script src="js/jquery.validate.js"></script> -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrapValidator.js"></script>
+<script src="js/distpicker.data.js"></script>
+<script src="js/distpicker.js"></script>
+<script src="js/surplus.js"></script>    
+<script src="js/Upload-picture.js"></script>
+<script src="js/error.js"></script>
+</head>
+<body>
+<!-- container-header-->
+  <div class="container container-header">
+    <div class="row clearfix container-header-center">
+        <div class="headerLeft pull-left">
+          <div class="headerLeft-logo">
+            <a href="index.html" class="pull-left"><img src="images/zdtlogo1.jpg" alt="" class="img-responsive"></a>
+          </div>
+        </div>
+        <div class="headerRight pull-right">
+        <div class="headerRight-user">
+          <div class="headerRight-launch pull-left">
+            <a href="initiate.html">发起项目</a>
+          </div>
+
+          <div class="headerRight-user dropdown pull-left">
+            <a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="images/0.jpg" alt="" class="img-circle">
+                <span>Dropdown trigger</span>
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu headerRight-user-dropdown" aria-labelledby="dLabel">
+                <li><a href="#"><i class="glyphicon glyphicon-list" aria-hidden="true"></i>我的订单</a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-tasks"></i>我的项目</a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-info-sign"></i>帮助中心</a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-cog"></i>个人设置</a></li>
+                <li><a href="#"><i class="glyphicon glyphicon-off"></i>退出</a></li>
+            </ul>
+          </div>
+            
+          <!-- 注册登录 -->
+          <div class="headerRight-user pull-left"></div>
+
+
+
+
+
+        </div>    
+      </div>
+    </div>
+  </div>
+  <div class="processor" >
+    <i class="fa fa-check-circle i1" style="color: #5cb975"></i>
+    <i class="fa fa-minus-circle i2"></i>
+    <i class="fa fa-circle"></i><br/>
+    <span style="color: #5cb975">项目设置</span><span class="span2">内容编辑</span><span>回报设置</span>
+  </div>
+<!-- container-initiate -->
+  <div class="container container-initiate">
+      <div class="upload-photo container">
+        <div id="addCommodityIndex">        
+             <!--input-group start-->
+            <div class="input-group">
+                <div class="btn">
+                    <p>上传项目封面图片</p>
+                    <span>建议尺寸 1280 x 720 px</span><br/>
+                    <span>大小：2M以内</span><br/> 
+                    <span>格式：jpg、png、gif、jpeg</span>    
+                </div>
+                <div class="big-photo">
+                    <div id="preview">
+                        <img id="imghead" border="0" src="images/photo_icon.png" onclick="$('#previewImg').click();">
+                    </div>        
+                    <input type="file" onchange="previewImage(this)" style="display: none;" id="previewImg">
+                  <!--<input id="uploaderInput" class="uploader__input" style="display: none;" type="file" accept="" multiple="">-->
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+    <form method="post" id="defaultForm" class="form-horizontal">
+      <div class="rowForm form-group">
+        <input type="text" class="col-md-8 text-center col-md-offset-2 col-xs-12" placeholder="输入项目标题，最多30个字" maxlength="30" name="title" id="formCon2">
+        <span class="spanNum2"><span id="textCount2">30</span><span>/30</span></span>
+      </div>
+      <div class="rowForm1 form-group">
+        <label for="" class="col-md-1 col-md-offset-2 col-xs-2"><i>*</i>&nbsp项目简介</label>
+        <textarea maxlength="100" type="text" class="col-md-7 col-xs-10" rows="8" name="intorduce" id="formCon3"></textarea>
+        <span class="spanNum3"><span id="textCount3">100</span><span>/100</span></span>
+      </div>
+      <div class="rowForm2 form-group">
+        <label for="" class="col-md-1 col-md-offset-2 col-xs-2"><i>*</i>&nbsp众筹金额<br/><span>（元）</span></label>
+        <input type="text" class="col-md-7 col-xs-10" placeholder="请输入众筹金额" name="money">
+      </div>
+      <div class="rowForm2 form-group">
+        <label for="" class="col-md-1 col-md-offset-2 col-xs-2"><i>*</i>&nbsp众筹天数</label>
+        <input type="number" min="1" max="120" class="col-md-3 col-xs-10" placeholder="请输入天数" name="days">
+      </div>
+      <div class="rowForm form-group">
+        <label for="" class="col-md-1 col-md-offset-2 col-xs-2"><i>*</i>&nbsp真实姓名</label>
+        <input type="text" class="col-md-3 text-center col-xs-10" value="Mr.Feng" disabled>
+      </div>
+      <div class="rowForm2 form-group">
+        <label for="" class="col-md-1 col-md-offset-2 col-xs-2"><i>*</i>&nbsp手机号码</label>
+        <input type="text" class="col-md-3 col-xs-10" maxlength="11" placeholder="请输入本人或者本项目其他成员手机号码" name="iphone">
+        <span class="col-md-10 col-md-offset-2 prompt"><i class="glyphicon glyphicon-info-sign" style="color: #5cb975"></i>温馨提示：平台将会推送手机号码给您的每一位支持者</span>
+      </div>
+      <div class="rowForm">
+        <label for="" class="col-md-1 col-md-offset-2 col-xs-2"><i>*</i>&nbsp发起地点</label>
+        <div class="formcity col-md-7 col-xs-10">
+          <div data-toggle="distpicker">
+            <div class="form-group col-md-3">
+              <label class="sr-only" for="province1">Province</label>
+              <select class="form-control" id="province1"></select>
+            </div>
+            <div class="form-group col-md-3">
+              <label class="sr-only" for="city1">City</label>
+              <select class="form-control" id="city1"></select>
+            </div>
+            <div class="form-group col-md-3">
+              <label class="sr-only" for="district1">District</label>
+              <select class="form-control" id="district1"></select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rowForm">
+        <label for="" class="col-md-1 col-md-offset-2 col-xs-2"><i>*</i>&nbsp项目分类</label>
+        <select class="col-md-3 col-xs-10">
+          <option value ="volvo">Volvo</option>
+          <option value ="saab"> Saab</option>
+          <option value="opel"> Opel</option>
+          <option value="audi"> Audi</option>
+        </select>
+      </div>
+      </form>
+      <button type="button" class="btn btn-success col-md-offset-8" value="next">下一步</button> 
+  </div>
+
+</body>
+</html>

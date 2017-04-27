@@ -1,0 +1,248 @@
+
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.input-group-btn{top: -5px;}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    text-align: right;
+    opacity: 0;
+    background: none repeat scroll 0 0 transparent;
+    cursor: inherit;
+    display: block;
+}
+
+.file-preview-frame {
+    position: relative;
+    display: table;
+    margin: 8px;
+    height: 160px;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 5px 0 #a2958a;
+    padding: 6px;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.file-preview-other {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.file-preview-other:hover {
+    opacity: 0.8;
+}
+
+.file-actions, .file-other-error {
+    text-align: left;
+}
+
+.file-other-icon {
+    font-size: 4.8em;
+}
+
+/* noinspection CssOverwrittenProperties */
+.file-zoom-dialog .file-other-icon {
+    font-size: 8em;
+    font-size: 55vmin;
+}
+
+
+
+.file-actions {
+    margin-top: 15px;
+}
+
+.file-footer-buttons {
+    float: right;
+}
+
+.file-upload-indicator {
+    display: inline;
+    cursor: default;
+    opacity: 0.8;
+    width: 60%;
+}
+
+.file-upload-indicator:hover {
+    font-weight: bold;
+    opacity: 1;
+}
+
+.file-footer-caption {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 160px;
+    text-align: center;
+    padding-top: 4px;
+    font-size: 11px;
+    color: #777;
+    margin: 5px auto;
+}
+
+.file-preview-error {
+    opacity: 0.65;
+    box-shadow: none;
+}
+
+.file-preview-frame:not(.file-preview-error) .file-footer-caption:hover {
+    color: #000;
+}
+
+/*有用*/
+.file-drop-zone {
+    border: 1px dashed #aaa;
+    border-radius: 4px;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    margin: 12px 15px 12px 12px;
+    padding: 5px;
+}
+/*有用*/
+.file-drop-zone-title {
+    color: #aaa;
+    font-size: 1.6em;
+    padding: 85px 10px;
+    cursor: default;
+}
+
+.file-preview .clickable,
+.clickable .file-drop-zone-title {
+    cursor: pointer;
+}
+
+.file-drop-zone.clickable:hover {
+    border: 2px dashed #999;
+}
+
+.file-drop-zone.clickable:focus {
+    border: 2px solid #5acde2;
+}
+/*有用*/
+.file-drop-zone .file-preview-thumbnails {
+    cursor: default;
+}
+
+.file-highlighted {
+    border: 2px dashed #999 !important;
+    background-color: #f0f0f0;
+}
+
+.file-uploading {
+    background: url('../img/loading-sm.gif') no-repeat center bottom 10px;
+    opacity: 0.65;
+}
+
+.file-thumb-progress {
+    height: 10px;
+}
+
+.file-thumb-progress .progress, .file-thumb-progress .progress-bar {
+    height: 10px;
+    font-size: 9px;
+    line-height: 10px;
+}
+
+.file-thumbnail-footer {
+    position: relative;
+}
+
+.file-thumb-progress {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    right: 0;
+}
+
+.file-zoom-fullscreen.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.file-zoom-fullscreen .modal-dialog {
+    position: fixed;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.file-zoom-fullscreen .modal-content {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.file-zoom-fullscreen .modal-body {
+    overflow-y: auto;
+}
+
+.file-zoom-dialog .modal-body {
+    position: relative !important;
+}
+
+.file-zoom-dialog .btn-navigate {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    text-decoration: none;
+    outline: none;
+    opacity: 0.7;
+    top: 45%;
+    font-size: 4em;
+    color: #1c94c4;
+}
+
+.file-zoom-dialog .floating-buttons {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+
+
+
+.file-zoom-dialog .btn-navigate:not([disabled]):hover,
+.file-zoom-dialog .btn-navigate:not([disabled]):focus {
+    outline: none;
+    box-shadow: none;
+    opacity: 0.5;
+}
+
+.file-zoom-dialog .btn-navigate[disabled] {
+    opacity: 0.7;
+}
+
+.file-zoom-dialog .btn-prev {
+    left: 1px;
+}
+
+.file-zoom-dialog .btn-next {
+    right: 1px;
+}
+
+
+/* IE 10 fix */
+.btn-file ::-ms-browse {
+    width: 100%;
+    height: 100%;
+}
