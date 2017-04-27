@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/head.css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'>
+    <style>
+        .container-header{padding-bottom: 60px;}
+        .formPwd{padding-top: 50px;}
+        .formPwd>div{padding-bottom: 20px;}
+        .formPwd>div>label{display: inline-block;line-height: 45px; height: 45px;}
+        .formPwd>div>input{height: 45px;}
+        .formPwd>div>span{display: inline-block;border:1px solid #679df6; height: 45px; color:#679df6;line-height: 45px; }
+        .formPwd>div>a{font-size: 12px; color: #ccc;}
+        .otherMode{color: #999;}
+        .otherMode:before{content: "———————"}
+        .otherMode:after{content: "———————"}
+        .othericon>div{padding:30px 0 100px 210px;}
+        .othericon>div>i{font-size: 50px;}
+        .othericon .rowr{position: relative;}
+        .othericon .rowr img{ position: absolute;left: -10px; top: -195px;display:none; }
+        .othericon .rowr i:hover img{display: block;}
+    </style>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- container-header-->
+    <div class="container container-header">
+        <div class="row clearfix container-header-center">
+            <div class="headerLeft pull-left">
+                <div class="headerLeft-logo">
+                    <a href="index.html" class="pull-left"><img src="images/zdtlogo1.jpg" alt="" class="img-responsive"></a>
+                    <div class="headerLeft-logo-nav pull-left">
+                        <a href="menu-initiator.html" id="aaa">发起人手册</a>
+                        <a href="search.html">更多故事</a>
+                        <a href="QR-code.html" target="_bank">APP下载</a>
+                        <a href="search.html"><i class="glyphicon glyphicon-search" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="headerRight pull-right">
+                <div class="headerRight-usergroup">
+                    <div class="headerRight-launch pull-left">
+                        <a href="initiate-step1.html">发起项目</a>
+                    </div>
+                    <div class="headerRight-user dropdown pull-left">
+                        <a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="images/0.jpg" alt="" class="img-circle">
+                            <span>Dropdown trigger</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu headerRight-user-dropdown" aria-labelledby="dLabel">
+                            <li><a href="#"><i class="glyphicon glyphicon-list" aria-hidden="true"></i>我的订单</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-tasks"></i>我的项目</a></li>
+                            <li><a href="help-Center/page/index.html" target="_blank"><i class="glyphicon glyphicon-info-sign"></i>帮助中心</a></li>
+                            <li><a href="page/index-set.html"><i class="glyphicon glyphicon-cog"></i>个人设置</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-off"></i>退出</a></li>
+                        </ul>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 img-responsive"><img src="images/findpwd.png" alt=""/></div>
+            <div class="col-md-7 col-md-offset-1">
+                <form action="" class="formPwd">
+                    <div class="form-group row">
+                        <label for="" class="col-md-2"><i>*</i>账号</label>
+                        <input class="col-md-9" type="text" placeholder="手机/邮箱">
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2" for=""><i>*</i>密码</label>
+                        <input class="col-md-9" minlength="6" type="text" placeholder="请输入验证码">
+                        <a href="findpwd.html" class="col-md-offset-8">忘记登录密码</a>
+                    </div>
+                </form>
+            
+            <p class="otherMode text-center">其他方式登录</p>
+            <div class="othericon row">
+                <div class="col-md-2 rowf col-md-setoff-4">
+                    <i class="fa fa-weibo" aria-hidden="true" style="color: #ea4335"></i>
+                </div>
+                <div class="col-md-2 rowr">  
+                    <i class="fa fa-wechat" aria-hidden="true" style="color: #3eb94e">
+                        <img src="images/findpwdQR.png" alt="">
+                    </i>
+                </div>  
+            </div>
+            <div class="footerBtn pull-right">
+                <a href="register.html" type="button" class="btn btn-default btn-lg">免费注册</a>
+                <a href="#" type="button" class="btn btn-success btn-lg">登录</a>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
